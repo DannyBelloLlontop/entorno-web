@@ -6,22 +6,30 @@
     <div class="row">
         <div class="col-5">
             <form [formGroup]="contactusForm">
-                <div class="form-group">
-                    <input type="text" formControlName="nombre">
+                <div formGroupName="persona">
+                    <div class="form-group">
+                        <input type="text" formControlName="nombre" placeholder="Nombre" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" formControlName="apellido" placeholder="Apellido" class="form-control">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" formControlName="apellido">
+                    <input type="email" formControlName="email" placeholder="Email: dominio@dominio.com" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="email" formControlName="email">
+                    <textarea formControlName="mensaje" placeholder="Mensaje" class="form-control" row="5"></textarea >
                 </div>
                 <div class="form-group">
-                    <textarea formControlName="mensaje"></textarea >
-                </div>
-                <div class="form-group">
-                    <button>Enviar datos</button>
+                    <button (click)="__onSubmit()" class="btn btn-primary" >Enviar datos</button>
                 </div>
             </form>
+            <!-- <p>
+                Datos del formulario: {{contactusForm.value | json}}
+            </p> -->
+            <!-- <p>
+                Formulario Validado: {{contactusForm.valid}}
+            </p> -->
         </div>
         <div class="col-7">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62388.96112747908!2d-76.97904773200236!3d-12.22727219051383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9e0f449b10f%3A0x876705c16ffc17d7!2sUPC%20Campus%20Villa!5e0!3m2!1ses-419!2spe!4v1648954482925!5m2!1ses-419!2spe" width="800" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
